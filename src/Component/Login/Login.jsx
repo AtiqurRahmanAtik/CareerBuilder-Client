@@ -1,21 +1,67 @@
 import { FcGoogle } from "react-icons/fc";
+import photo from "../../assets/Image/login.jpg";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
+
+    const { loginUser,user,setUser} = useContext(AuthContext);
+    
+
+    const handleLogin = (e)=> {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        const loggedUser = {email,password};
+        console.log(loggedUser);
+
+        //loginUser
+        loginUser(email,password)
+        .then(result =>{
+
+            Swal.fire({
+                title: 'Success',
+                text: 'Login Successful ',
+                icon: 'success',
+                confirmButtonText: 'ok'
+              })
+            console.log(result.user);
+        })
+        .catch(error =>{
+
+            Swal.fire({
+                title: 'Error!',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'ok'
+              })
+            console.log(error);
+        })
+
+    }
+
     return (
         <div>
             
             <div className="hero  bg-base-200">
   <div className="hero-content flex-col  gap-5 lg:flex-row-reverse">
-    <div className="flex-1 text-center lg:text-left">
-      <h1 className="text-5xl font-bold">Login now!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+    <div className="flex-1 text-center space-y-2 lg:text-left">
+      <h1 className="text-5xl font-bold text-center">Please Login  </h1>
+        
+        <img src={photo} alt="" />
     </div>
 
 
     {/* form */}
         
         <div className="flex-1 p-5 bg-[url('https://i.ibb.co/TbsVX95/bg-imgae.jpg')] space-y-4 rounded-3xl">
-        <form >
+
+
+        <form onSubmit={handleLogin}>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -31,6 +77,8 @@ const Login = () => {
         
         </div>
 
+        
+
         <div className="form-control mt-6">
           <button className="btn text-2xl font-bold text-black btn-primary bg-gradient-to-r from-red-600 to-indigo-500">Login</button>
           
@@ -41,7 +89,7 @@ const Login = () => {
           
 
         <div className="text-center">
-            <h1>Don't Have An Account ? Please<button className="btn btn-link">Registration</button></h1>
+            <h1>Don't Have An Account ? Please<Link to='/register'> <button className="btn btn-link">Registration</button></Link></h1>
         </div>
 
         <hr />
