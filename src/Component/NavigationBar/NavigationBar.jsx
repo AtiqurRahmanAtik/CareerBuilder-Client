@@ -1,15 +1,42 @@
+
 import { Link, NavLink } from "react-router-dom";
+
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+
 
 
 
 const NavigationBar = () => {
 
+    const {user,logOut} = useContext(AuthContext);
+
     const list = <>
     
     <NavLink to='/'> <li><a>Home</a></li></NavLink>
     <NavLink > <li><a> All Jobs</a></li></NavLink>
-    <NavLink > <li><a> Applied Jobs</a></li></NavLink>
-    </>
+
+    
+        <NavLink > <li><a> Applied Jobs</a></li></NavLink>
+    {/* { user && <div>
+        <NavLink > <li><a> Applied Jobs</a></li></NavLink>
+        <NavLink > <li><a> Applied Jobs</a></li></NavLink>
+        </div>
+    } */}
+    </> 
+
+
+    //logOut
+    const handleLogOut = () =>{
+        logOut()
+        .then(() => {
+            
+            console.log(' Sign-out successful.')
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+    }
 
     return (
        
@@ -43,27 +70,39 @@ const NavigationBar = () => {
 
 
         
-        <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-            </div>
-          </div>
-          <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-            <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </a>
-            </li>
-            <li><a>Settings</a></li>
-            <li><a>Logout</a></li>
-          </ul>
-        </div>
+      
     
 
   <div className="navbar-end">
-   <Link to='/login'>  <button className="btn  bg-green-400">Login</button></Link>
+
+
+        {/* dropdown  */}
+        {  user && <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button" title={user.displayName} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img alt="Tailwind CSS Navbar component" referrerPolicy="no-referrer" src={user?.photoURL} />
+              </div>
+            </div>
+            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+              <li>
+                <a className="justify-between">
+                    Add A Job
+                  <span className="badge">New</span>
+                </a>
+              </li>
+              <li><a>My Jobs</a></li>
+             <button onClick={handleLogOut}>  <li><a>Logout</a></li></button>
+            </ul>
+          </div>
+        }
+
+
+        {/* login */}
+
+        { !user &&  <div>
+                  <Link to='/login'>  <button className="btn  bg-green-400">Login</button></Link>
+            </div>
+        }
   </div>
 
 

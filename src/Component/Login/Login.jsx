@@ -5,9 +5,10 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
+
 const Login = () => {
 
-    const { loginUser,user,setUser} = useContext(AuthContext);
+    const { loginUser, googleSignIn } = useContext(AuthContext);
     
 
     const handleLogin = (e)=> {
@@ -43,6 +44,23 @@ const Login = () => {
         })
 
     }
+
+
+
+   
+    //google singin
+    const handleGoogle = ()=>{
+
+        googleSignIn()
+        .then(result =>{
+            
+            const users = result.user;
+            console.log(users);
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+      }
 
     return (
         <div>
@@ -80,7 +98,7 @@ const Login = () => {
         
 
         <div className="form-control mt-6">
-          <button className="btn text-2xl font-bold text-black btn-primary bg-gradient-to-r from-red-600 to-indigo-500">Login</button>
+          <button  className="btn text-2xl font-bold text-black btn-primary bg-gradient-to-r from-red-600 to-indigo-500">Login</button>
           
         </div>
 
@@ -95,13 +113,13 @@ const Login = () => {
         <hr />
         </form>
 
-        
+        {/* google login */}
         <div className="space-y-3">
             <h1 className="text-center text-2xl font-semibold">Login With </h1>
 
            <div  className="text-center">
           
-           <button className="btn w-2/5 text-2xl font-semibold space-x-2">
+           <button onClick={()=> handleGoogle()} className="btn w-2/5 text-2xl font-semibold space-x-2">
            <div >
            <FcGoogle className="text-3xl"></FcGoogle>
            </div>
@@ -109,8 +127,11 @@ const Login = () => {
            Google
            </div>
             </button>
+            
            </div>
         </div>
+
+
         </div>
   </div>
 </div>
