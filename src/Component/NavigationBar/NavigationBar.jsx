@@ -91,7 +91,8 @@ const NavigationBar = () => {
                 </a>
               </li>
               <li><a>My Jobs</a></li>
-             <button onClick={handleLogOut}>  <li><a>Logout</a></li></button>
+             
+             <Link to='/'> <button onClick={handleLogOut}>  <li><a>Logout</a></li></button></Link>
             </ul>
           </div>
         }
