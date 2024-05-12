@@ -1,6 +1,6 @@
 import { FcGoogle } from "react-icons/fc";
 import photo from "../../assets/Image/login.jpg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
@@ -10,6 +10,9 @@ const Login = () => {
 
     const { loginUser, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    console.log(location);
 
     const handleLogin = (e)=> {
         e.preventDefault();
@@ -23,15 +26,21 @@ const Login = () => {
         //loginUser
         loginUser(email,password)
         .then(result =>{
-
-            Swal.fire({
+            //after login go to 
+             navigate(location?.state? location.state : '/');
+             
+             Swal.fire({
                 title: 'Success',
                 text: 'Login Successful ',
                 icon: 'success',
                 confirmButtonText: 'ok'
-              })
+            })
+           
             console.log(result.user);
-            navigate('/');
+            form.reset();
+
+            
+           
         })
         .catch(error =>{
 
@@ -54,6 +63,8 @@ const Login = () => {
 
         googleSignIn()
         .then(result =>{
+            //after login go to 
+            navigate(location?.state? location.state : '/');
             Swal.fire({
                 title: 'Success',
                 text: 'Login Successful ',

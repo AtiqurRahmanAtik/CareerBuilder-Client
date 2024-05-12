@@ -17,6 +17,8 @@ const JobCategory = () => {
 
     },[])
 
+
+
     
     return (
       <div className='my-9'>
@@ -26,9 +28,10 @@ const JobCategory = () => {
             {/* tabs section */}
             <Tabs>
             <div className='flex items-center justify-center'>
+
             <TabList>
-      <Tab>On-Site Job</Tab>
-      <Tab checked>Remote Job</Tab>
+      <Tab >On-Site Job</Tab>
+      <Tab defaultChecked>Remote Job</Tab>
       <Tab>Hybrid</Tab>
       <Tab>Part-Time</Tab>
     </TabList>

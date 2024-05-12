@@ -13,6 +13,7 @@ import Login from './Component/Login/Login';
 import Register from './Component/Register/Register';
 import AuthProvider from './Component/AuthProvider/AuthProvider';
 import ViewDetails from './Component/ViewDetails/ViewDetails';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 
 
 
@@ -37,7 +38,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/job/:id',
-        element: <ViewDetails></ViewDetails>,
+        element: <PrivateRoute>
+          <ViewDetails></ViewDetails>
+        </PrivateRoute>,
         loader: ({params})=> fetch(`http://localhost:5000/job/${params.id}`)
     }
     ]

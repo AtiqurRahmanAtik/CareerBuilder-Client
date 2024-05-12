@@ -17,12 +17,8 @@ const NavigationBar = () => {
     <NavLink > <li><a> All Jobs</a></li></NavLink>
 
     
-        <NavLink > <li><a> Applied Jobs</a></li></NavLink>
-    {/* { user && <div>
-        <NavLink > <li><a> Applied Jobs</a></li></NavLink>
-        <NavLink > <li><a> Applied Jobs</a></li></NavLink>
-        </div>
-    } */}
+    <NavLink > <li><a> Blogs </a></li></NavLink>
+  
     </> 
 
 
@@ -85,12 +81,15 @@ const NavigationBar = () => {
             </div>
             <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
               <li>
-                <a className="justify-between">
+                <Link className="justify-between">
                     Add A Job
                   <span className="badge">New</span>
-                </a>
+                </Link>
               </li>
-              <li><a>My Jobs</a></li>
+
+
+             <Link>  <li><a>Applied Jobs</a></li></Link>
+             <Link>  <li><a>My Jobs</a></li></Link>
              
              <Link to='/'> <button onClick={handleLogOut}>  <li><a>Logout</a></li></button></Link>
             </ul>

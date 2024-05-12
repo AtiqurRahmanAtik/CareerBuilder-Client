@@ -10,7 +10,8 @@ const JobTab = ({job}) => {
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
         <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-        <div className="card-body">
+
+        <div className="card-body space-y-3">
           <h2 className="card-title">Job Title : {job_title} </h2>
           
       
@@ -34,7 +35,7 @@ const JobTab = ({job}) => {
           </div>
       
               {/*view details  */}
-          <div className="card-actions ">
+          <div className="card-actions mx-auto">
             
             <Link to={`/job/${_id}`}> <button className="btn btn-primary">View Details</button></Link>
           </div>

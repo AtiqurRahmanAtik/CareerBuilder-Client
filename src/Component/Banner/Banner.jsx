@@ -13,6 +13,9 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 export default function Banner() {
+
+    
+
   return (
     
     <div className='max-h-screen'>
