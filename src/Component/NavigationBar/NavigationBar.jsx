@@ -14,7 +14,7 @@ const NavigationBar = () => {
     const list = <>
     
     <NavLink to='/'> <li><a>Home</a></li></NavLink>
-    <NavLink > <li><a> All Jobs</a></li></NavLink>
+    <NavLink to='/allJobs'> <li><a> All Jobs</a></li></NavLink>
 
     
     <NavLink > <li><a> Blogs </a></li></NavLink>
@@ -81,7 +81,7 @@ const NavigationBar = () => {
             </div>
             <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
               <li>
-                <Link className="justify-between">
+                <Link to='/addjob' className="justify-between">
                     Add A Job
                   <span className="badge">New</span>
                 </Link>
