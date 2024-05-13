@@ -89,7 +89,8 @@ const NavigationBar = () => {
 
 
              <Link>  <li><a>Applied Jobs</a></li></Link>
-             <Link>  <li><a>My Jobs</a></li></Link>
+
+             <Link to='/myjob'>  <li><a>My Jobs</a></li></Link>
              
              <Link to='/'> <button onClick={handleLogOut}>  <li><a>Logout</a></li></button></Link>
             </ul>

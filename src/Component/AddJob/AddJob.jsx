@@ -2,9 +2,17 @@ import { useContext } from "react";
 import photo from "../../assets/Image/backgroundImage.jpg";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
+import  { useState } from "react";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
+import Swal from "sweetalert2";
+
 const AddJob = () => {
 
         const {user} = useContext(AuthContext);
+        const [startDate, setStartDate] = useState(new Date());
 
     const handleFrom = (e) =>{
         e.preventDefault();
@@ -12,15 +20,44 @@ const AddJob = () => {
         const name = form.name.value;
         const photo = form.photo.value;
         const job_title = form.job_title.value;
-        const email = form.user?.email;
+        const email = user?.email;
         const salary = form.salary.value;
         const job_description = form.job_description.value;
         const posting_data = form.posting_data.value;
-        const applicantNumber = parseInt(form.applicantNumber.value);
+        const select = form.select.value;
+        const deadline = startDate;
 
-        const AddJobUser = {name,email,photo,job_title,salary,job_description,posting_data,applicantNumber};
+        if(deadline === posting_data){
+            alert('Deadline is over');
+        }
+
+        let applicantNumber = parseInt(form.applicantNumber.value);
+
+        const AddJobUser = {name,email,photo,job_title,salary,job_description,posting_data,applicantNumber,deadline,select};
 
         console.log(AddJobUser);
+
+        axios.post('http://localhost:5000/applyJob', AddJobUser)
+        .then(res => {
+            console.log(res.data);
+
+            if(res.data.insertedId){
+
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your Job  Apply Success ",
+                    showConfirmButton: false,
+                    timer: 2000
+                  });
+            }
+       
+        })
+        .catch(error =>{
+            console.log(error);
+        })
+
+
 
 
 
@@ -73,7 +110,7 @@ const AddJob = () => {
                     <div>
                         <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Job Category</label>
 
-                        <select className="select select-bordered w-full">
+                        <select name="select" className="select select-bordered w-full">
                          <option selected>On Site</option>
                         <option>Remote</option>
                         <option>Part-Time</option>
@@ -93,14 +130,20 @@ const AddJob = () => {
                     </div>
 
                     <div>
+                        <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Deadline</label>
+
+                        <DatePicker className="border p-3 rounded-xl" name="deadline" selected={startDate} onChange={(date) => setStartDate(date)} />
+                    </div>
+
+                    <div>
                         <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Job Applicants Number</label>
-                        <input type="text" name="applicantNumber" placeholder="Job Applicants Number" required className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg " />
+                        <input type="text" defaultValue={0} name="applicantNumber" placeholder="Job Applicants Number" required className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg " />
                     </div>
 
 
 
 
-                    <button className="btn btn-info w-full mx-auto"> Sign Up </button>
+                    <button className="btn btn-info w-full mx-auto"> Apply Job </button>
                 </form>
             </div>
         </div>
