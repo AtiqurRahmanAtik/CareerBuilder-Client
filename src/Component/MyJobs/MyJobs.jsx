@@ -2,6 +2,7 @@
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext,  useEffect,  useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 
 
@@ -14,9 +15,7 @@ const MyJobs = () => {
     // const {name,email,photo,job_title,salary,job_description,posting_data,applicantNumber,deadline,select} = item;
 
    
-        useEffect(()=>{
-
-            
+     useEffect(()=>{    
     axios.get(`http://localhost:5000/myjobs/${user?.email}`)
     .then(res =>{
         setItem(res.data);
@@ -25,6 +24,32 @@ const MyJobs = () => {
         console.log(error);
     })
     },[item]);
+
+
+
+    //handle delete 
+    const handleDelete = (id) =>{
+       
+        axios.delete(`http://localhost:5000/myjob/${id}`)
+        .then(res => {
+            console.log(res.data);
+            if(res.data.deletedCount > 0){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "Success",
+                    title: "Your Job item is Deleted ",
+                    showConfirmButton: false,
+                    timer: 2000
+                  });
+            }
+            
+        })
+        .catch(error => {
+            console.log(error);
+        })
+     
+    }
+
 
 
     return (
@@ -75,7 +100,8 @@ const MyJobs = () => {
             <th>
             <div className="space-x-3">
             <button className="btn bg-green-500 btn-xs">Update</button>
-            <button className="btn bg-red-500 btn-xs">Delete</button>
+
+            <button onClick={()=> handleDelete(item._id)} className="btn bg-red-500 btn-xs">Delete</button>
             </div>
             </th>
 

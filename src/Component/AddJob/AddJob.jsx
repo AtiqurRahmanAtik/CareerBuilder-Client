@@ -41,7 +41,7 @@ const AddJob = () => {
         .then(res => {
             console.log(res.data);
 
-            if(res.data.insertedId){
+            if(res.data.modifiedCount > 0){
 
                 Swal.fire({
                     position: "top-end",
