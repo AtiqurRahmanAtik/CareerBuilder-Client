@@ -1,13 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const AllJobs = () => {
+
+
+    const jobs = useLoaderData([]);
+    
+   
+
     return (
        
             <div className="overflow-x-auto my-11 space-y-7 text-center ">
 
 
-                <h1 className="text-3xl font-bold text-green-600">  All Jobs page</h1>
+                <h1 className="text-3xl font-bold text-green-600">  All Jobs page : {jobs.length}</h1>
 
 
   <table className="table border ">
@@ -23,58 +29,44 @@ const AllJobs = () => {
 
       </tr>
     </thead>
+
+
     <tbody>
       {/* row 1 */}
-      <tr>
-       
-        <td>
-          <div className="flex items-center gap-3">
-        
-            <div>
-              <div className="font-bold">Hart Hagerty</div>
-              
-            </div>
-          </div>
-        </td>
-        <td>
-          Zemlak, Daniel and Leannon
-         
-        </td>
-        <td>Purple</td>
-
-        <td>Purple</td>
-
-        <th>
-          <button className="btn btn-ghost btn-xs">details</button>
-        </th>
-      </tr>
-
-
-      {/* row 2 */}
-      <tr>
-       
-        <td>
-          <div className="flex items-center gap-3">
-        
-            <div>
-              <div className="font-bold">Hart Hagerty</div>
-              
-            </div>
-          </div>
-        </td>
-        <td>
-          Zemlak, Daniel and Leannon
-         
-        </td>
-        <td>Purple</td>
-
-        <td>Purple</td>
-
-        <th>
-          <button className="btn btn-ghost btn-xs">details</button>
-        </th>
-      </tr>
      
+        {
+            jobs.map((jobs) =>  <tr key={jobs._id}>
+       
+            <td>
+              <div className="flex jobss-center gap-3">
+            
+                <div>
+                  <div className="font-bold">{jobs.job_title}</div>
+                  
+                </div>
+              </div>
+            </td>
+            <td>
+             {jobs.posting_data}
+             
+            </td>
+           
+            <td>{jobs.email}</td>
+
+    
+            <td>{jobs.salary}</td>
+    
+
+        <th>
+       
+       <Link to={`/viewDetail/${jobs._id}`}>   <button className="btn btn-ghost btn-xs">details</button></Link>
+        </th>
+      </tr>
+        )
+    }
+
+
+   
     </tbody>
  
     

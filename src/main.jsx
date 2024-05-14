@@ -18,6 +18,7 @@ import AddJob from './Component/AddJob/AddJob';
 import AllJobs from './Component/AllJobs/AllJobs';
 import MyJobs from './Component/MyJobs/MyJobs';
 import UpdateJob from './Component/UpdateJob/UpdateJob';
+import JobsView from './Component/JobsView/JobsView';
 
 
 
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: '/allJobs',
         element: <AllJobs></AllJobs>,
-        loader : () => fetch('')
+        loader : () => fetch('http://localhost:5000/applyJob')
       },
       {
         path:'/addjob',
@@ -66,7 +67,18 @@ const router = createBrowserRouter([
           <ViewDetails></ViewDetails>
         </PrivateRoute>,
         loader: ({params})=> fetch(`http://localhost:5000/job/${params.id}`)
+    },
+
+      {
+        path: '/viewDetail/:id',
+        element: <PrivateRoute>
+          <JobsView></JobsView>
+        </PrivateRoute>,
+       loader : ({params}) => fetch(`http://localhost:5000/applyJob/${params.id}`)
+            
     }
+
+
     ]
 
 

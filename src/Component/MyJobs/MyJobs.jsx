@@ -68,7 +68,8 @@ const MyJobs = () => {
        
         <th className="text-2xl font-bold text-black">Job Title</th>
         <th  className="text-2xl font-bold text-black">Job Posting Date</th>
-        <th  className="text-2xl font-bold text-black">Application Deadline</th>
+       
+        <th  className="text-2xl font-bold text-black">Email</th>
         <th  className="text-2xl font-bold text-black">Salary range</th>
         <th  className="text-2xl font-bold text-black">Edite</th>
 
@@ -94,7 +95,9 @@ const MyJobs = () => {
              {item.posting_data}
              
             </td>
-            <td>{item.deadline}</td>
+           
+            <td>{item.email}</td>
+
     
             <td>{item.salary}</td>
     
