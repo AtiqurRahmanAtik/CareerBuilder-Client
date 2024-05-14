@@ -14,7 +14,7 @@ const ViewDetails = () => {
 
 
     const handleApply = (e)=>{
-        
+
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
@@ -136,6 +136,7 @@ const ViewDetails = () => {
 </dialog>
 
             </div>
+            
           </div>
         </div>
 
