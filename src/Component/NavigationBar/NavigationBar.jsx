@@ -17,7 +17,7 @@ const NavigationBar = () => {
     <NavLink to='/allJobs'> <li><a> All Jobs</a></li></NavLink>
 
     
-    <NavLink > <li><a> Blogs </a></li></NavLink>
+    <NavLink to='/blog'> <li><a> Blogs </a></li></NavLink>
   
     </> 
 

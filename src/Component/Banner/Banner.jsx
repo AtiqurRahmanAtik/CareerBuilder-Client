@@ -11,8 +11,24 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function Banner() {
+
+    const [banner, setBanner] = useState();
+    console.log(banner);
+
+    useEffect(()=> {
+        axios.get('http://localhost:5000/bannerJob')
+        .then(res => {
+            setBanner(res.data);
+        })
+        .catch(error =>{
+            console.log(error);
+        })
+    },[]);
+
 
     
 
