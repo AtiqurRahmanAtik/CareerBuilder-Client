@@ -17,6 +17,7 @@ import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import AddJob from './Component/AddJob/AddJob';
 import AllJobs from './Component/AllJobs/AllJobs';
 import MyJobs from './Component/MyJobs/MyJobs';
+import UpdateJob from './Component/UpdateJob/UpdateJob';
 
 
 
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
         path: '/myjob',
         element : <MyJobs></MyJobs>,
        
+      },
+      {
+        path: '/update/:id',
+        element : <UpdateJob></UpdateJob>,
+       loader: ({params})=> fetch(`http://localhost:5000/applyJob/${params.id}`)
       },
 
       {

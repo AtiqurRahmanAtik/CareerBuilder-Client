@@ -3,6 +3,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext,  useEffect,  useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 
@@ -99,7 +100,8 @@ const MyJobs = () => {
     
             <th>
             <div className="space-x-3">
-            <button className="btn bg-green-500 btn-xs">Update</button>
+
+           <Link to={`/update/${item._id}`}>  <button className="btn bg-green-500 btn-xs">Update</button></Link>
 
             <button onClick={()=> handleDelete(item._id)} className="btn bg-red-500 btn-xs">Delete</button>
             </div>
