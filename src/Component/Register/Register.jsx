@@ -19,7 +19,7 @@ const Register = () => {
         const password = form.password.value;
 
         const registerUser = {name,email,photo,password};
-        console.log(registerUser);
+        // console.log(registerUser);
 
         //createUser 
         createUser(email,password)
@@ -31,7 +31,7 @@ const Register = () => {
                 icon: 'success',
                 confirmButtonText: 'ok'
               })
-            console.log(result.user);
+            // console.log(result.user);
 
             //updateProfile
             updateUserProfile( name,photo )
@@ -47,7 +47,7 @@ const Register = () => {
                 icon: 'error',
                 confirmButtonText: 'ok'
               })
-            console.log(error);
+            // console.log(error);
         })
 
 

@@ -31,12 +31,12 @@ const JobsView = () => {
 
         const UserData = {name,email,resume_link,job_title,salary,posting_data,};
         
-        console.log(UserData);
+        // console.log(UserData);
 
 
         axios.post('https://career-builder-server-one.vercel.app/singleJob', UserData)
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
 
             if(res.data.modifiedCount > 0){
 
@@ -54,7 +54,7 @@ const JobsView = () => {
 
         })
         .catch(error =>{
-            console.log(error);
+            // console.log(error);
         })
     }
 

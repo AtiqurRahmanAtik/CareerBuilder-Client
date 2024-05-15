@@ -26,7 +26,7 @@ export default function Banner() {
             setBanner(res.data);
         })
         .catch(error =>{
-            console.log(error);
+            // console.log(error);
         })
     },[]);
 

@@ -12,7 +12,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    console.log(location);
+    // console.log(location);
 
     const handleLogin = (e)=> {
         e.preventDefault();
@@ -21,7 +21,7 @@ const Login = () => {
         const password = form.password.value;
 
         const loggedUser = {email,password};
-        console.log(loggedUser);
+        // console.log(loggedUser);
 
         //loginUser
         loginUser(email,password)
@@ -36,7 +36,7 @@ const Login = () => {
                 confirmButtonText: 'ok'
             })
            
-            console.log(result.user);
+            // console.log(result.user);
             form.reset();
 
             
@@ -50,7 +50,7 @@ const Login = () => {
                 icon: 'error',
                 confirmButtonText: 'ok'
               })
-            console.log(error);
+            // console.log(error);
         })
 
     }
@@ -72,11 +72,11 @@ const Login = () => {
                 confirmButtonText: 'ok'
               })
             const users = result.user;
-            console.log(users);
+            // console.log(users);
            
         })
         .catch(error=>{
-            console.log(error);
+            // console.log(error);
         })
       }
 

@@ -22,7 +22,7 @@ const MyJobs = () => {
         setItem(res.data);
     })
     .catch(error =>{
-        console.log(error);
+        // console.log(error);
     })
     },[item]);
 
@@ -33,7 +33,7 @@ const MyJobs = () => {
        
         axios.delete(`https://career-builder-server-one.vercel.app/myjob/${id}`)
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             if(res.data.deletedCount > 0){
                 Swal.fire({
                     position: "top-end",
@@ -46,7 +46,7 @@ const MyJobs = () => {
             
         })
         .catch(error => {
-            console.log(error);
+            // console.log(error);
         })
      
     }

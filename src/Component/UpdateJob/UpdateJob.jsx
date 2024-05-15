@@ -15,7 +15,7 @@ const UpdateJob = () => {
 
     const {user} = useContext(AuthContext);
     const jobs = useLoaderData();
-    console.log(jobs);
+    // console.log(jobs);
 
     const {_id,name,email,photo,job_title,salary,job_description,posting_data,applicantNumber,deadline,select} = jobs || {};
 
@@ -48,11 +48,11 @@ const UpdateJob = () => {
 
         const AddJobUser = {name,email,photo,job_title,salary,job_description,posting_data,applicantNumber,deadline,select};
 
-        console.log(AddJobUser);
+        // console.log(AddJobUser);
 
         axios.put(`https://career-builder-server-one.vercel.app/applyJob/${_id}`, AddJobUser)
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
 
             if(res.data.modifiedCount > 0){
 
@@ -67,7 +67,7 @@ const UpdateJob = () => {
        
         })
         .catch(error =>{
-            console.log(error);
+            // console.log(error);
         })
 
 

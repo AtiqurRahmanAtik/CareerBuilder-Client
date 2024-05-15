@@ -24,7 +24,7 @@ const AppliedJobs = () => {
         setItem(res.data);
     })
     .catch(error =>{
-        console.log(error);
+        // console.log(error);
     })
     },[item]);
 

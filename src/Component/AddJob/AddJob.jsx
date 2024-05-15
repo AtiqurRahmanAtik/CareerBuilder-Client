@@ -35,11 +35,11 @@ const AddJob = () => {
 
         const AddJobUser = {name,email,photo,job_title,salary,job_description,posting_data,applicantNumber,deadline,select};
 
-        console.log(AddJobUser);
+        // console.log(AddJobUser);
 
         axios.post('https://career-builder-server-one.vercel.app/applyJob', AddJobUser)
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
 
             if(res.data.modifiedCount > 0){
 
@@ -54,7 +54,7 @@ const AddJob = () => {
        
         })
         .catch(error =>{
-            console.log(error);
+            // console.log(error);
         })
 
 
