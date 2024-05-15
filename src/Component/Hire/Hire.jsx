@@ -51,7 +51,7 @@ const Hire = () => {
 
                       <div className="flex gap-4">
                         <h1> <span className="text-xl font-bold"> Location :</span> {item.location}</h1>
-                        <h1><span className="text-xl font-bold"> Experience :</span>  {item.experience_years}</h1>
+                        <h1><span className="text-xl font-bold"> Experience :</span>  {item.experience_years} Years</h1>
                       </div>
                     
              
