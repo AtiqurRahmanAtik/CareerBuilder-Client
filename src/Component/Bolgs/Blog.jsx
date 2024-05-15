@@ -16,7 +16,7 @@ const Blog = () => {
 
         <div className="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-2">
             <div>
-                <img className="relative z-10 object-cover w-full rounded-md h-96" src={`https://i.ibb.co/f42hqT9/0-efoc2takya9z-Xra-L.webp`} alt=""/>
+                <img className="relative z-10 object-cover w-full rounded-md h-96" src={`https://i.postimg.cc/FHSX4jY0/BPJjA.png`} alt=""/>
 
                 <div className="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
                     <a href="#" className="font-semibold text-gray-800 hover:underline dark:text-white md:text-xl">
@@ -32,7 +32,7 @@ const Blog = () => {
             </div>
 
             <div>
-                <img className="relative z-10 object-cover w-full rounded-md h-96" src={`https://i.ibb.co/nR2d1Qh/f3a9a38b-116d-4b35-8f46-8d8abb78166f.png`} alt=""/>
+                <img className="relative z-10 object-cover w-full rounded-md h-96" src={`https://i.postimg.cc/bJ3KTg5f/expreess.webp`} alt=""/>
 
                 <div className="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
                     <a href="#" className="font-semibold text-gray-800 hover:underline dark:text-white md:text-xl">

@@ -1,0 +1,57 @@
+[
+    {
+      "name": "John Doe",
+      "occupation": "Software Engineer",
+      "skills": ["Java", "Python", "JavaScript"],
+      "experience_years": 5,
+      "rate_per_hour": 80,
+      "location": "San Francisco, CA",
+      "image": "https://i.ibb.co/F738MDP/team-1.jpg"
+    },
+    {
+      "name": "Alice Smith",
+      "occupation": "Digital Marketer",
+      "skills": ["SEO", "SEM", "Content Marketing"],
+      "experience_years": 8,
+      "rate_per_hour": 65,
+      "location": "New York, NY",
+      "image": "https://i.ibb.co/B3W8CvT/benefits-of-obtaining-a-pe-license.jpg"
+    },
+    {
+      "name": "Michael Johnson",
+      "occupation": "Graphic Designer",
+      "skills": ["Adobe Illustrator", "Photoshop", "UI/UX Design"],
+      "experience_years": 6,
+      "rate_per_hour": 70,
+      "location": "Los Angeles, CA",
+      "image": "https://i.postimg.cc/BnS7hHxq/del-1.webp"
+    },
+    {
+      "name": "Sarah Lee",
+      "occupation": "Data Scientist",
+      "skills": ["Machine Learning", "Data Analysis", "Python"],
+      "experience_years": 7,
+      "rate_per_hour": 90,
+      "location": "Chicago, IL",
+      "image": "https://i.postimg.cc/8zZKxcHL/how-to-become-a-software-engineer.jpg"
+    },
+    {
+      "name": "David Brown",
+      "occupation": "Financial Advisor",
+      "skills": ["Investment Planning", "Retirement Strategies", "Taxation"],
+      "experience_years": 10,
+      "rate_per_hour": 100,
+      "location": "Dallas, TX",
+      "image": "https://i.postimg.cc/3wPBHvD0/d.jpg"
+    },
+    {
+      "name": "Emily Taylor",
+      "occupation": "HR Consultant",
+      "skills": ["Employee Relations", "Recruitment", "Performance Management"],
+      "experience_years": 8,
+      "rate_per_hour": 75,
+      "location": "Boston, MA",
+      "image": "https://i.postimg.cc/26hxjS4c/a.jpg"
+    }
+  ]
+  

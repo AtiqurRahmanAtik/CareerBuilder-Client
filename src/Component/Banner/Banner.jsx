@@ -18,7 +18,7 @@ import axios from 'axios';
 export default function Banner() {
 
     const [banner, setBanner] = useState();
-    console.log(banner);
+   
 
     useEffect(()=> {
         axios.get('http://localhost:5000/bannerJob')

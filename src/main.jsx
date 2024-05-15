@@ -20,6 +20,8 @@ import MyJobs from './Component/MyJobs/MyJobs';
 import UpdateJob from './Component/UpdateJob/UpdateJob';
 import JobsView from './Component/JobsView/JobsView';
 import Blog from './Component/Bolgs/Blog';
+import AppliedJobs from './Component/AppliedJobs/AppliedJobs';
+import Download from './Component/Download/Download';
 
 
 
@@ -63,6 +65,17 @@ const router = createBrowserRouter([
         </PrivateRoute>
        
       },
+      {
+        path: '/appliedJobs',
+        element: <AppliedJobs></AppliedJobs>,
+      
+      },
+      {
+        path: '/download/:id',
+        element: <Download></Download>,
+        loader : ({params})=> fetch(`http://localhost:5000/download/${params.id}`)
+      },
+
       {
         path: '/update/:id',
         element : <UpdateJob></UpdateJob>,

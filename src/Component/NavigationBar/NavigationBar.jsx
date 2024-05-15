@@ -88,7 +88,7 @@ const NavigationBar = () => {
               </li>
 
 
-             <Link>  <li><a>Applied Jobs</a></li></Link>
+             <Link to='/appliedJobs'>  <li><a>Applied Jobs</a></li></Link>
 
              <Link to='/myjob'>  <li><a>My Jobs</a></li></Link>
              
