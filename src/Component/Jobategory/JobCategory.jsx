@@ -9,7 +9,7 @@ const JobCategory = () => {
     const [user,setUser] = useState([]);
     
     useEffect(()=>{
-        fetch('http://localhost:5000/job')
+        fetch('https://career-builder-server-one.vercel.app/job')
         .then(res=> res.json())
         .then(data =>{
             setUser(data);

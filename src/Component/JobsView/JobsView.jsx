@@ -34,7 +34,7 @@ const JobsView = () => {
         console.log(UserData);
 
 
-        axios.post('http://localhost:5000/singleJob', UserData)
+        axios.post('https://career-builder-server-one.vercel.app/singleJob', UserData)
         .then(res => {
             console.log(res.data);
 

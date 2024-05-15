@@ -17,7 +17,7 @@ const MyJobs = () => {
 
    
      useEffect(()=>{    
-    axios.get(`http://localhost:5000/myjobs/${user?.email}`)
+    axios.get(`https://career-builder-server-one.vercel.app/myjobs/${user?.email}`)
     .then(res =>{
         setItem(res.data);
     })
@@ -31,7 +31,7 @@ const MyJobs = () => {
     //handle delete 
     const handleDelete = (id) =>{
        
-        axios.delete(`http://localhost:5000/myjob/${id}`)
+        axios.delete(`https://career-builder-server-one.vercel.app/myjob/${id}`)
         .then(res => {
             console.log(res.data);
             if(res.data.deletedCount > 0){

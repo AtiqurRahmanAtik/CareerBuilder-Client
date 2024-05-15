@@ -52,7 +52,7 @@ const router = createBrowserRouter([
       {
         path: '/allJobs',
         element: <AllJobs></AllJobs>,
-        loader : () => fetch('http://localhost:5000/applyJob')
+        loader : () => fetch('https://career-builder-server-one.vercel.app/applyJob')
       },
       {
         path:'/addjob',
@@ -73,13 +73,13 @@ const router = createBrowserRouter([
       {
         path: '/download/:id',
         element: <Download></Download>,
-        loader : ({params})=> fetch(`http://localhost:5000/download/${params.id}`)
+        loader : ({params})=> fetch(`https://career-builder-server-one.vercel.app/download/${params.id}`)
       },
 
       {
         path: '/update/:id',
         element : <UpdateJob></UpdateJob>,
-       loader: ({params})=> fetch(`http://localhost:5000/applyJob/${params.id}`)
+       loader: ({params})=> fetch(`https://career-builder-server-one.vercel.app/applyJob/${params.id}`)
       },
 
       {
@@ -87,7 +87,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <ViewDetails></ViewDetails>
         </PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/job/${params.id}`)
+        loader: ({params})=> fetch(`https://career-builder-server-one.vercel.app/job/${params.id}`)
     },
 
       {
@@ -95,7 +95,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <JobsView></JobsView>
         </PrivateRoute>,
-       loader : ({params}) => fetch(`http://localhost:5000/applyJob/${params.id}`)
+       loader : ({params}) => fetch(`https://career-builder-server-one.vercel.app/applyJob/${params.id}`)
             
     }
 

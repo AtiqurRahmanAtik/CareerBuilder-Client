@@ -19,7 +19,7 @@ const AppliedJobs = () => {
 
    
      useEffect(()=>{    
-    axios.get(`http://localhost:5000/singleJob/${user?.email}`)
+    axios.get(`https://career-builder-server-one.vercel.app/singleJob/${user?.email}`)
     .then(res =>{
         setItem(res.data);
     })

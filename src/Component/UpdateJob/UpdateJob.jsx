@@ -50,7 +50,7 @@ const UpdateJob = () => {
 
         console.log(AddJobUser);
 
-        axios.put(`http://localhost:5000/applyJob/${_id}`, AddJobUser)
+        axios.put(`https://career-builder-server-one.vercel.app/applyJob/${_id}`, AddJobUser)
         .then(res => {
             console.log(res.data);
 

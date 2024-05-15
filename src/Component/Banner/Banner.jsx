@@ -21,7 +21,7 @@ export default function Banner() {
    
 
     useEffect(()=> {
-        axios.get('http://localhost:5000/bannerJob')
+        axios.get('https://career-builder-server-one.vercel.app/bannerJob')
         .then(res => {
             setBanner(res.data);
         })

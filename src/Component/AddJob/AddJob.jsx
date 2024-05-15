@@ -37,7 +37,7 @@ const AddJob = () => {
 
         console.log(AddJobUser);
 
-        axios.post('http://localhost:5000/applyJob', AddJobUser)
+        axios.post('https://career-builder-server-one.vercel.app/applyJob', AddJobUser)
         .then(res => {
             console.log(res.data);
 
