@@ -50,7 +50,7 @@ const NavigationBar = () => {
       </ul>
       
     </div>
-    <Link to='/' className="btn btn-ghost text-xl">Career <span className="text-orange-400">Builder</span></Link>
+    <Link to='/' className="btn btn-ghost text-xl">  Career <span className="text-orange-400">Builder</span></Link>
   </div>
 
 

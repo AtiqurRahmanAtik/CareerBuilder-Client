@@ -1,3 +1,4 @@
+import photo from "../../assets/Image/onsite soft.jpg";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -51,25 +52,68 @@ export default function Banner() {
         className="mySwiper"
       >
         <SwiperSlide>
-        <div className="hero min-h-screen" style={{backgroundImage: 'url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)'}}>
+        <div className="hero min-h-screen" style={{backgroundImage: 'url(https://i.ibb.co/4SbBT0p/onsite-soft.jpg)'}}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
+      <h1 className="mb-5 text-5xl font-bold text-red-400">Software Engineer</h1>
+      <p className="mb-5  text-justify">Join our team as a Software Engineer to develop cutting-edge software solutions for our clients. We're looking for skilled developers proficient in multiple programming languages.</p>
+    
     </div>
   </div>
 </div>
         </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide>
+        <div className="hero min-h-screen" style={{backgroundImage: 'url(https://i.ibb.co/P9kFQyj/remot.jpg)'}}>
+  <div className="hero-overlay bg-opacity-60"></div>
+
+  <div className="hero-content text-center text-neutral-content">
+    <div className="max-w-md">
+      <h1 className="mb-5 text-5xl font-bold text-red-400">Data Analyst</h1>
+      <p className="mb-5">Seeking a Data Analyst to analyze large datasets, generate insights, and contribute to data-driven decision-making processes remotely. Strong statistical and analytical skills required.</p>
+    
+    </div>
+  </div>
+
+</div>
+            </SwiperSlide>
+        <SwiperSlide>
+        <div className="hero min-h-screen" style={{backgroundImage: 'url(https://i.ibb.co/hf2vrzg/onsite-network.jpg)'}}>
+  <div className="hero-overlay bg-opacity-60"></div>
+  <div className="hero-content text-center text-neutral-content">
+    <div className="max-w-md">
+      <h1 className="mb-5 text-5xl font-bold text-red-400">Network Administrator</h1>
+      <p className="mb-5 text-justify">Tech Giant Corp. requires a skilled Network Administrator to manage and optimize our network infrastructure. This role involves troubleshooting network issues and ensuring network security.</p>
+    
+    </div>
+  </div>
+</div>
+            </SwiperSlide>
+        <SwiperSlide>
+        <div className="hero min-h-screen" style={{backgroundImage: 'url(https://i.ibb.co/GsGd7DM/hybrid-bussines.jpg)'}}>
+  <div className="hero-overlay bg-opacity-60"></div>
+  <div className="hero-content text-center text-neutral-content">
+    <div className="max-w-md">
+      <h1 className="mb-5 text-5xl font-bold text-red-400">Business Analyst</h1>
+      <p className="mb-5  text-justify">Digital Dynamics Ltd. seeks a Business Analyst to analyze business processes, gather requirements, and contribute to strategic decision-making. This role involves both on-site and remote work.</p>
+    
+    </div>
+  </div>
+</div>
+        </SwiperSlide>
+        <SwiperSlide>
+        <div className="hero min-h-screen" style={{backgroundImage: 'url(https://i.ibb.co/yg7gMd0/developer-remote.jpg)'}}>
+  <div className="hero-overlay bg-opacity-60"></div>
+  <div className="hero-content text-center text-neutral-content">
+    <div className="max-w-md">
+      <h1 className="mb-5 text-5xl font-bold text-red-400">Software Developer</h1>
+      <p className="mb-5  text-justify">Tech Solutions Inc. is seeking a skilled Software Developer to work remotely on exciting software projects. Strong programming skills and experience with modern technologies required.</p>
+    
+    </div>
+  </div>
+</div>
+        </SwiperSlide>
+       
       </Swiper>
     </div>
   );

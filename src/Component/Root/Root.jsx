@@ -5,13 +5,13 @@ import Footer from "../Footer/Footer";
 
 const Root = () => {
     return (
-        <div className="container mx-auto space-y-9 ">
-            <div >
+        <div >
+            <div className="container mx-auto space-y-9 ">
             <NavigationBar></NavigationBar>
             <Outlet></Outlet>
             </div>
             
-            <div>
+            <div className="mt-7">
             <Footer></Footer>
             </div>
         </div>

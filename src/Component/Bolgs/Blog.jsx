@@ -10,8 +10,7 @@ const Blog = () => {
             <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white"> The blog</h1>
 
             <p className="max-w-lg mx-auto mt-4 text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt, laudantium
-                quia tempore delect
+            We've handpicked writing opportunities for you, whether you're looking to work from home, remotely, or prefer freelance, full-time, part-time, contract, or .
             </p>
         </div>
 
